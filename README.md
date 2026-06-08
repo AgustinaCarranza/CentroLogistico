@@ -4,4 +4,6 @@ Alternativa Elegida: Opcion C
 Estructura de datos utilizadas: Arreglos, Listas Enlazadas, Grafos y Conjuntos
 Funcionalidades implementadas en esta segunda etapa: Localizacion de stock, Movimiento de inventario, Seguimiento de lotes, Control de inventario critico
 Link del repositorio: https://github.com/AgustinaCarranza/CentroLogistico
-Actividades realizadas por cada integrante:
+Actividades realizadas por cada integrante: 
+Agustina Carranza
+ConjuntoCodigos, DiccionarioProductos, MovimientoInventario, NodoMovimiento, PilaMovimientos, Producto
