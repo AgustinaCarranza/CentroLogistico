@@ -35,4 +35,14 @@ public class DiccionarioProductos {
             }
         }
     }
+    //stock critico
+    public void mostrarProductosCriticos(int limite){
+        System.out.println("Productos son stock critico (menor a "+ limite + "):");
+        for (int i = 0; i < cantidad; i++){
+            if (productos[i].getStock() < limite){
+                System.out.println("Codigo: " + productos[i].getCodigo() + "| Nombre: " +
+                        productos[i].getNombre() + "| Stock actual: " + productos[i].getStock());
+            }
+        }
+    }
 }
