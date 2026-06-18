@@ -1,3 +1,8 @@
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Set;
+
 public class GrafosPasillos implements IGrafoPasillos {
     private NodoVertice primero;//no ponemos T porque solo lo vamos a usar con pasillos
     private boolean dirigido;
@@ -6,7 +11,6 @@ public class GrafosPasillos implements IGrafoPasillos {
         this.primero = null;
         this.dirigido = dirigido;
     }
-
     @Override
     public void insertarVertice(Pasillos pasillo) {
         if (existeVertice(pasillo)) return;
@@ -153,11 +157,49 @@ public class GrafosPasillos implements IGrafoPasillos {
 
     @Override
     public void recorridoDFS(Pasillos inicio) {
+        Set<Integer> visitados = new HashSet<>();//los conjuntos de ID ya visitados
+        NodoVertice verticeInicio = buscarVertice(inicio);//busca el vertice inicial
+        dfs(verticeInicio, visitados);//llama al metodo recursivo
+    }
+    //metodo auxiliar recursivo
+    private void dfs(NodoVertice vertice, Set<Integer> visitados){
+        if (vertice == null || visitados.contains(vertice.dato.getId())) return;
 
+        System.out.println("Visitando: " + vertice.dato.getNombrePasillo());
+        visitados.add(vertice.dato.getId());
+
+        NodoAdyacente ady = vertice.adyacente;
+        while (ady != null){
+            dfs(buscarVertice(ady.dato), visitados);
+            ady = ady.siguiente;
+        }
     }
 
     @Override
     public void recorridoBFS(Pasillos inicio) {
+        Set<Integer> visitados = new HashSet<>();
+        Queue<NodoVertice> cola = new LinkedList<>();//cola para bfs
+
+        NodoVertice inicial = buscarVertice(inicio);
+        if (inicial == null) return;
+
+        cola.add(inicial);
+        visitados.add(inicial.dato.getId());
+
+        while (!cola.isEmpty()){
+            NodoVertice actual = cola.poll();
+            System.out.println("Visitando: " + actual.dato.getNombrePasillo());
+
+            NodoAdyacente ady = actual.adyacente;
+            while (ady != null){
+                NodoVertice vecino = buscarVertice(ady.dato);
+                if (vecino != null && !visitados.contains(vecino.dato.getId())){
+                    cola.add(vecino);
+                    visitados.add(vecino.dato.getId());
+                }
+                ady = ady.siguiente;
+            }
+        }
 
     }
 }
