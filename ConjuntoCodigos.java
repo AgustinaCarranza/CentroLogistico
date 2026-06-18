@@ -1,3 +1,5 @@
+package TDA;
+
 public class ConjuntoCodigos {
     private int[] codigos; //guardamos los codigos
     private int cantidad;// la cantidad de codigos
@@ -26,7 +28,7 @@ public class ConjuntoCodigos {
     public boolean pertenece(int codigo){
         for (int i = 0; i < cantidad; i++){//recoremos los codidos
             if (codigos[i] == codigo){//si lo encontramos
-                return true;//devolvemos true porque lo encontramos
+                return true;//devolvemos true
             }
         }
         return false;// si no devuelve falso

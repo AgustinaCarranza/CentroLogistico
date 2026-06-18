@@ -1,3 +1,6 @@
+package TDA;
+import Service.MovimientoInventario;
+
 public class NodoMovimiento {
     MovimientoInventario dato;
     NodoMovimiento siguiente;

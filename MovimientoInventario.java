@@ -1,3 +1,6 @@
+package Service;
+import Model.Producto;
+
 public class MovimientoInventario {
     private Producto producto; //referencia el prooducto
     private int cantidad; //cantidad que entra o sale
@@ -35,13 +38,6 @@ public class MovimientoInventario {
     }
 
 
-            //sale error con este
-            //public void mostrarDettalles() {
-            // System.out.println("Movimiento: " + tipo + "Producto: " + producto
-            //            + "Codigo: " + producto.getCodigo() + "Cantidad" + cantidad
-            //            + "Stock actual: " + producto.getStock());
-            //}
-
 
             public String mostrarDetalles () {
                 return "Movimiento: " + tipo +  " |Producto: " + producto.getNombre() +
@@ -49,3 +45,5 @@ public class MovimientoInventario {
                         " | Stock actual: " + producto.getStock();
             }
         }
+
+

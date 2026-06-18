@@ -1,3 +1,7 @@
+package TDA;
+import Model.Producto;
+
+
 public class DiccionarioProductos {
     private int[] codigos;// arreglo de las claves(codigos)
     private Producto[] productos;

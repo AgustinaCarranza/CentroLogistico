@@ -1,21 +1,31 @@
+package controller;
+import TDA.DiccionarioProductos;
+import TDA.GrafosPasillos;
+import Model.Producto;
+import Model.Pasillos;
+import Service.MovimientoInventario;
+
+
+
+
 public class Main {
     public static void main(String[] args) {
-        Producto p1 = new Producto("Leche",5555,89);
-        Producto p2 = new Producto("Arroz", 9999, 123);
-        Producto p3 = new Producto("Botellas de agua",1111,6);
+        Producto prod1 = new Producto("Leche",5555,89);
+        Producto prod2 = new Producto("Arroz", 9999, 123);
+        Producto prod3 = new Producto("Botellas de agua",1111,6);
 
         //guarda los datos en el diccionario
         DiccionarioProductos diccionario = new DiccionarioProductos(10);
-        diccionario.insertar(p1.getCodigo(),p1);
-        diccionario.insertar(p2.getCodigo(), p2);
-        diccionario.insertar(p3.getCodigo(),p3);
+        diccionario.insertar(prod1.getCodigo(),prod1);
+        diccionario.insertar(prod2.getCodigo(), prod2);
+        diccionario.insertar(prod3.getCodigo(),prod3);
 
         //entrada y salida
-        MovimientoInventario entrada = new MovimientoInventario(p1,6,"entrada");
+        MovimientoInventario entrada = new MovimientoInventario(prod1,6,"entrada");
         entrada.movimiento();
         System.out.println(entrada.mostrarDetalles());
 
-        MovimientoInventario salida = new MovimientoInventario(p1,20,"salida");
+        MovimientoInventario salida = new MovimientoInventario(prod1,20,"salida");
         salida.movimiento();
         System.out.println(salida.mostrarDetalles());
 

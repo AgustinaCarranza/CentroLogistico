@@ -1,3 +1,6 @@
+package TDA;
+import Model.Pasillos;
+
 public class NodoAdyacente {
     Pasillos dato;
     NodoAdyacente siguiente;
@@ -6,4 +9,5 @@ public class NodoAdyacente {
         this.dato = dato;
         this.siguiente = null;
     }
+    public Pasillos getDato(){ return dato; }
 }

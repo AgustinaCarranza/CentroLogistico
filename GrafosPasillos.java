@@ -1,7 +1,11 @@
+package TDA;
+import Model.Pasillos;
+import TDA.IGrafoPasillos;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Set;
+
 
 public class GrafosPasillos implements IGrafoPasillos {
     private NodoVertice primero;//no ponemos T porque solo lo vamos a usar con pasillos

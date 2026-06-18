@@ -1,3 +1,6 @@
+package TDA;
+import Model.Pasillos;
+
 public class NodoVertice{
     Pasillos dato;
     NodoVertice siguiente;
@@ -10,4 +13,5 @@ public class NodoVertice{
         this.adyacente = null;
         this.visitado = false;
     }
+    public Pasillos getDato(){ return  dato;}
 }
