@@ -29,7 +29,7 @@ public class Pedido {
         return cantidad;
     }
 
-    public void mostarPedido(){
+    public void mostrarPedido(){
         System.out.println("Pedido ID: " + id);
         for (int i = 0; i < cantidad; i++){
             Producto p = productos[i];
