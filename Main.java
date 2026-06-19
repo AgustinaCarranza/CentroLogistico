@@ -55,6 +55,15 @@ public class Main {
         System.out.println("=== PEDIDOS PENDIENTES ===");
         colaPedidos.mostrarPedidos();
 
+        PilaMovimientos historial = new PilaMovimientos();
+
+        historial.apilar(entrada);
+        historial.apilar(salida);
+
+        System.out.println();
+        System.out.println("=== HISTORIAL ===");
+        historial.mostrarHistorial();
+
         //nos permite buscar por codigo un producto si existe
         Scanner teclado = new Scanner(System.in);
 
