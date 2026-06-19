@@ -1,3 +1,7 @@
+package TDA;
+
+import Model.Pedido;
+
 public class ColaCircularPedidos {
 
     private Pedido[] cola;
@@ -32,5 +36,20 @@ public class ColaCircularPedidos {
 
     public boolean estaVacia() {
         return cantidad == 0;
+    }
+
+    public void mostrarPedidos() {
+
+        if (estaVacia()) {
+            System.out.println("No hay pedidos pendientes");
+            return;
+        }
+
+        int i = frente;
+
+        for (int contador = 0; contador < cantidad; contador++) {
+            cola[i].mostrarPedido();
+            i = (i + 1) % cola.length;
+        }
     }
 }
