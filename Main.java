@@ -7,6 +7,8 @@ import TDA.DiccionarioProductos;
 import TDA.GrafosPasillos;
 import TDA.PilaMovimientos;
 import java.util.Scanner;
+import TDA.ColaCircularPedidos;
+import Model.Pedido;
 
 public class Main {
     public static void main(String[] args) {
@@ -36,14 +38,32 @@ public class Main {
 
         System.out.println("Movimientos guardados en la pila");
 
+        Pedido pedido1 = new Pedido(1,5);
+        pedido1.agregarProducto(prod1); // Leche
+        pedido1.agregarProducto(prod2); // Arroz
+
+        Pedido pedido2 = new Pedido(2,5);
+        pedido2.agregarProducto(prod3); // Botellas de agua
+
+        ColaCircularPedidos colaPedidos =
+                new ColaCircularPedidos(10);
+
+        colaPedidos.encolar(pedido1);
+        colaPedidos.encolar(pedido2);
+
+        System.out.println();
+        System.out.println("=== PEDIDOS PENDIENTES ===");
+        colaPedidos.mostrarPedidos();
+
         //nos permite buscar por codigo un producto si existe
         Scanner teclado = new Scanner(System.in);
 
+        System.out.println();
         System.out.print("Ingrese el código del producto a buscar: ");
         int codigoBuscado = teclado.nextInt();
 
         Producto buscado = diccionario.recuperar(codigoBuscado);
-
+        System.out.println();
         if (buscado != null) {
             System.out.println("Producto encontrado:");
             System.out.println("Nombre: " + buscado.getNombre());
@@ -52,11 +72,13 @@ public class Main {
         } else {
             System.out.println("No existe ningún producto con el código ingresado.");
         }
+        System.out.println();
 
         //muestra los productos con stock al limite
         diccionario.mostrarProductosCriticos(10);
 
 
+        System.out.println();
         //crear grafo de pasillos (no dirigido)
         GrafosPasillos grafo = new GrafosPasillos(false);
 
