@@ -34,4 +34,13 @@ public class PilaMovimientos {
         }
     }
 
+    public void mostrarHistorial() {
+        NodoMovimiento aux = tope;
+
+        while (aux != null) {
+            System.out.println(aux.dato.mostrarDetalles());
+            aux = aux.siguiente;
+        }
+    }
+
 }
