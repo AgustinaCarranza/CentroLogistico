@@ -11,7 +11,7 @@ Link del repositorio: https://github.com/AgustinaCarranza/CentroLogistico
 
 Actividades realizadas por cada integrante: 
 Agustina Carranza:
-ConjuntoCodigos, DiccionarioProductos, MovimientoInventario, NodoMovimiento, Producto
+ConjuntoCodigos, DiccionarioProductos, MovimientoInventario, NodoMovimiento, Producto, GrafosPasillos
 Ignacio Agustin Santos:
 ColaCircularPedidos, Pedido, PilaMovimientos, Main
 
