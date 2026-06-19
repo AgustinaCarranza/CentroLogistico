@@ -47,11 +47,11 @@ Resultado obtenido: Stock = 75, historial muestra entrada y salida
 Observaciones: Correcto
 
 Caso 3(Control de inventario critico)
-- Funcionalidad evaluada: Detectar productos con stock menor a 10
-- Datos de entrada: Producto = Botellas de agua (stock = 6)
-- Resultado esperado: Producto listado como critico
-- Resultado obtenido: "Productos con stock critico: Botellas de agua"
-- Observaciones: Correcto
+Funcionalidad evaluada: Detectar productos con stock menor a 10
+Datos de entrada: Producto = Botellas de agua (stock = 6)
+Resultado esperado: Producto listado como critico
+Resultado obtenido: "Productos con stock critico: Botellas de agua"
+Observaciones: Correcto
 
 Caso 4(Procesamiento de pedidos)
 Funcionalidad evaluada: Encolar y desencolar pedidos
