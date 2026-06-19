@@ -1,3 +1,5 @@
+package Model;
+
 public class Pedido {
     private int id;
     private Producto[] productos;
@@ -16,15 +18,23 @@ public class Pedido {
         }
     }
 
+    //getters
     public int getId() {
         return id;
     }
-
     public Producto[] getProductos() {
         return productos;
     }
-
     public int getCantidad() {
         return cantidad;
+    }
+
+    public void mostarPedido(){
+        System.out.println("Pedido ID: " + id);
+        for (int i = 0; i < cantidad; i++){
+            Producto p = productos[i];
+            System.out.println("- Producto: " + p.getNombre() + "| Codigo: " + p.getCodigo()
+            + "| Stock: " + p.getStock());
+        }
     }
 }
