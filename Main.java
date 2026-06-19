@@ -1,12 +1,12 @@
 package controller;
+
+import Model.Pasillos;
+import Model.Producto;
+import Service.MovimientoInventario;
 import TDA.DiccionarioProductos;
 import TDA.GrafosPasillos;
-import Model.Producto;
-import Model.Pasillos;
-import Service.MovimientoInventario;
-
-
-
+import TDA.PilaMovimientos;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -29,9 +29,29 @@ public class Main {
         salida.movimiento();
         System.out.println(salida.mostrarDetalles());
 
+        PilaMovimientos pila = new PilaMovimientos();
+
+        pila.apilar(entrada);
+        pila.apilar(salida);
+
+        System.out.println("Movimientos guardados en la pila");
+
         //nos permite buscar por codigo un producto si existe
-        Producto buscado = diccionario.recuperar(9999);
-        System.out.println("Encontrado " + buscado.getNombre());
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.print("Ingrese el código del producto a buscar: ");
+        int codigoBuscado = teclado.nextInt();
+
+        Producto buscado = diccionario.recuperar(codigoBuscado);
+
+        if (buscado != null) {
+            System.out.println("Producto encontrado:");
+            System.out.println("Nombre: " + buscado.getNombre());
+            System.out.println("Código: " + buscado.getCodigo());
+            System.out.println("Stock: " + buscado.getStock());
+        } else {
+            System.out.println("No existe ningún producto con el código ingresado.");
+        }
 
         //muestra los productos con stock al limite
         diccionario.mostrarProductosCriticos(10);
@@ -79,11 +99,7 @@ public class Main {
         grafo.eliminarVertice(pas3);
         System.out.println("Grafo después de eliminar Pasillo C:");
         grafo.mostrarGrafo();
+
+
     }
 }
-
-
-
-
-
-
